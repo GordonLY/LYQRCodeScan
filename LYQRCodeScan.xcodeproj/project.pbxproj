@@ -12,7 +12,6 @@
 		B618531E21E32EA900AB7EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B618531C21E32EA900AB7EFC /* Main.storyboard */; };
 		B618532021E32EAA00AB7EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B618531F21E32EAA00AB7EFC /* Assets.xcassets */; };
 		B618532321E32EAA00AB7EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B618532121E32EAA00AB7EFC /* LaunchScreen.storyboard */; };
-		B618533521E32EC800AB7EFC /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618532D21E32EC800AB7EFC /* ScanView.swift */; };
 		B618533B21E32EC800AB7EFC /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618533321E32EC800AB7EFC /* ScanViewController.swift */; };
 		B618533D21E32F0800AB7EFC /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618533C21E32F0800AB7EFC /* Permissions.swift */; };
 		B618534321E335FA00AB7EFC /* ScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618534221E335FA00AB7EFC /* ScanWrapper.swift */; };
@@ -20,6 +19,7 @@
 		B618534721E364C500AB7EFC /* ScanStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618534621E364C500AB7EFC /* ScanStyle.swift */; };
 		B618534921E3667500AB7EFC /* ScanLineAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618534821E3667500AB7EFC /* ScanLineAnimator.swift */; };
 		B618534B21E367CD00AB7EFC /* ScanNetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618534A21E367CD00AB7EFC /* ScanNetAnimator.swift */; };
+		B6AC385521E3929D0037D44C /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC385421E3929D0037D44C /* ScanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,6 @@
 		B618531F21E32EAA00AB7EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B618532221E32EAA00AB7EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B618532421E32EAA00AB7EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B618532D21E32EC800AB7EFC /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		B618533321E32EC800AB7EFC /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		B618533C21E32F0800AB7EFC /* Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permissions.swift; sourceTree = "<group>"; };
 		B618534221E335FA00AB7EFC /* ScanWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanWrapper.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		B618534621E364C500AB7EFC /* ScanStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanStyle.swift; sourceTree = "<group>"; };
 		B618534821E3667500AB7EFC /* ScanLineAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLineAnimator.swift; sourceTree = "<group>"; };
 		B618534A21E367CD00AB7EFC /* ScanNetAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanNetAnimator.swift; sourceTree = "<group>"; };
+		B6AC385421E3929D0037D44C /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 		B618532B21E32EC800AB7EFC /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
-				B618532D21E32EC800AB7EFC /* ScanView.swift */,
+				B6AC385421E3929D0037D44C /* ScanView.swift */,
 				B618534821E3667500AB7EFC /* ScanLineAnimator.swift */,
 				B618534A21E367CD00AB7EFC /* ScanNetAnimator.swift */,
 				B618534621E364C500AB7EFC /* ScanStyle.swift */,
@@ -172,9 +172,9 @@
 				B618534B21E367CD00AB7EFC /* ScanNetAnimator.swift in Sources */,
 				B618534521E3364A00AB7EFC /* ScanResult.swift in Sources */,
 				B618534921E3667500AB7EFC /* ScanLineAnimator.swift in Sources */,
+				B6AC385521E3929D0037D44C /* ScanView.swift in Sources */,
 				B618534321E335FA00AB7EFC /* ScanWrapper.swift in Sources */,
 				B618533B21E32EC800AB7EFC /* ScanViewController.swift in Sources */,
-				B618533521E32EC800AB7EFC /* ScanView.swift in Sources */,
 				B618533D21E32F0800AB7EFC /* Permissions.swift in Sources */,
 				B618531921E32EA900AB7EFC /* AppDelegate.swift in Sources */,
 			);
@@ -329,7 +329,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.LYQRCodeScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -347,7 +347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.LYQRCodeScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

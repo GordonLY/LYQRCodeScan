@@ -184,9 +184,12 @@ public extension ScanWrapper {
             print("error setTorch : \(error)")
         }
     }
-    ///  改变闪光灯的状态
-    func changeTorchState() {
-        guard isGetFlash else { return }
+    
+    ///   改变闪光灯的状态
+    ///
+    /// - Returns: 当前闪光灯的状态
+    func changeTorchState() -> AVCaptureDevice.TorchMode {
+        guard isGetFlash else { return .off }
         do {
             try input.device.lockForConfiguration()
             switch input.device.torchMode {
@@ -199,6 +202,11 @@ public extension ScanWrapper {
         } catch let error {
             print("error setTorch : \(error)")
         }
+        return input.device.torchMode
+    }
+    ///  当前闪光灯的状态
+    var currentTorchState: AVCaptureDevice.TorchMode {
+        return input.device.torchMode
     }
     
     ///  系统默认支持的码的类型

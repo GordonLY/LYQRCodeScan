@@ -1,9 +1,9 @@
 //
 //  ScanView.swift
-//  swiftScan
+//  LYQRCodeScan
 //
-//  Created by xialibing on 15/12/8.
-//  Copyright © 2015年 xialibing. All rights reserved.
+//  Created by 李扬 on 2019/1/7.
+//  Copyright © 2019 rrl360. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 open class ScanView: UIView {
     //扫码区域各种参数
     var viewStyle: ScanViewStyle = ScanViewStyle()
-     //扫码区域
+    //扫码区域
     var scanRetangleRect:CGRect = CGRect.zero
     
     //线条扫码动画封装
@@ -33,12 +33,12 @@ open class ScanView: UIView {
     var isAnimationing:Bool = false
     
     /**
-    初始化扫描界面
-    - parameter frame:  界面大小，一般为视频显示区域
-    - parameter vstyle: 界面效果参数
-    
-    - returns: instancetype
-    */
+     初始化扫描界面
+     - parameter frame:  界面大小，一般为视频显示区域
+     - parameter vstyle: 界面效果参数
+     
+     - returns: instancetype
+     */
     public init(frame:CGRect, vstyle:ScanViewStyle )
     {
         viewStyle = vstyle
@@ -82,7 +82,7 @@ open class ScanView: UIView {
     required public init?(coder aDecoder: NSCoder)
     {
         self.init()
-       
+        
     }
     
     deinit
@@ -97,13 +97,11 @@ open class ScanView: UIView {
         }
         
         
-//        print("ScanView deinit")
+        //        print("ScanView deinit")
     }
     
     
-    /**
-    *  开始扫描动画
-    */
+    ///  开始扫描动画
     func startScanAnimation()
     {
         if isAnimationing
@@ -119,7 +117,7 @@ open class ScanView: UIView {
         {
         case ScanViewAnimationStyle.LineMove:
             
-//            print(NSStringFromCGRect(cropRect))
+            //            print(NSStringFromCGRect(cropRect))
             
             scanLineAnimation!.startAnimatingWithRect(animationRect: cropRect, parentView: self, image:viewStyle.animationImage )
             break
@@ -145,9 +143,7 @@ open class ScanView: UIView {
         }
     }
     
-    /**
-     *  开始扫描动画
-     */
+    ///  停止扫描动画
     func stopScanAnimation()
     {
         isAnimationing = false
@@ -163,7 +159,7 @@ open class ScanView: UIView {
             scanNetAnimation?.stopStepAnimating()
             break
         case ScanViewAnimationStyle.LineStill:
-             self.scanLineStill?.isHidden = true
+            self.scanLineStill?.isHidden = true
             
             break
             
@@ -171,7 +167,7 @@ open class ScanView: UIView {
             
         }
     }
-
+    
     
     
     // Only override drawRect: if you perform custom drawing.
@@ -204,33 +200,33 @@ open class ScanView: UIView {
         let XRetangleRight = self.frame.size.width - XRetangleLeft
         
         
-//        print("frame:%@",NSStringFromCGRect(self.frame))
+        //        print("frame:%@",NSStringFromCGRect(self.frame))
         
         let context = UIGraphicsGetCurrentContext()!
         
         
         //非扫码区域半透明
-            //设置非识别区域颜色
+        //设置非识别区域颜色
         context.setFillColor(viewStyle.color_NotRecoginitonArea.cgColor)
-            //填充矩形
-            //扫码区域上面填充
+        //填充矩形
+        //扫码区域上面填充
         var rect = CGRect(x: 0, y: 0, width: self.frame.size.width, height: YMinRetangle)
-            context.fill(rect)
-            
-            
-            //扫码区域左边填充
+        context.fill(rect)
+        
+        
+        //扫码区域左边填充
         rect = CGRect(x: 0, y: YMinRetangle, width: XRetangleLeft, height: sizeRetangle.height)
-            context.fill(rect)
-            
-            //扫码区域右边填充
+        context.fill(rect)
+        
+        //扫码区域右边填充
         rect = CGRect(x: XRetangleRight, y: YMinRetangle, width: XRetangleLeft,height: sizeRetangle.height)
-            context.fill(rect)
-            
-            //扫码区域下面填充
+        context.fill(rect)
+        
+        //扫码区域下面填充
         rect = CGRect(x: 0, y: YMaxRetangle, width: self.frame.size.width,height: self.frame.size.height - YMaxRetangle)
-            context.fill(rect)
-            //执行绘画
-            context.strokePath()
+        context.fill(rect)
+        //执行绘画
+        context.strokePath()
         
         
         if viewStyle.isNeedShowRetangle
@@ -268,13 +264,13 @@ open class ScanView: UIView {
         switch viewStyle.photoframeAngleStyle
         {
         case ScanViewPhotoframeAngleStyle.Outer:
-                diffAngle = linewidthAngle/3//框外面4个角，与框紧密联系在一起
-           
+            diffAngle = linewidthAngle/3//框外面4个角，与框紧密联系在一起
+            
         case ScanViewPhotoframeAngleStyle.On:
-                diffAngle = 0
+            diffAngle = 0
             
         case ScanViewPhotoframeAngleStyle.Inner:
-                diffAngle = -viewStyle.photoframeLineW/2
+            diffAngle = -viewStyle.photoframeLineW/2
         }
         
         context.setStrokeColor(viewStyle.colorAngle.cgColor);
@@ -305,7 +301,7 @@ open class ScanView: UIView {
         //左下角垂直线
         context.move(to: CGPoint(x: leftX, y: bottomY+linewidthAngle/2))
         context.addLine(to: CGPoint(x: leftX, y: bottomY - hAngle))
-
+        
         //右上角水平线
         context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: topY))
         context.addLine(to: CGPoint(x: rightX - wAngle, y: topY))
@@ -313,8 +309,8 @@ open class ScanView: UIView {
         //右上角垂直线
         context.move(to: CGPoint(x: rightX, y: topY-linewidthAngle/2))
         context.addLine(to: CGPoint(x: rightX, y: topY + hAngle))
-
-//        右下角水平线
+        
+        //        右下角水平线
         context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: bottomY))
         context.addLine(to: CGPoint(x: rightX - wAngle, y: bottomY))
         
@@ -349,7 +345,7 @@ open class ScanView: UIView {
         
         return cropRect;
     }
-
+    
     //根据矩形区域，获取识别区域
     static func getScanRectWithPreView(preView:UIView, style: ScanViewStyle) -> CGRect
     {
@@ -449,8 +445,8 @@ open class ScanView: UIView {
             addSubview(labelReadying!)
         }
         
-         addSubview(labelReadying!)
-         activityView?.startAnimating()
+        addSubview(labelReadying!)
+        activityView?.startAnimating()
         
     }
     
@@ -467,5 +463,6 @@ open class ScanView: UIView {
             
         }
     }
-
+    
 }
+
