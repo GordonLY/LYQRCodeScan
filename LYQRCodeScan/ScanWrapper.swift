@@ -117,21 +117,6 @@ extension ScanWrapper: AVCaptureMetadataOutputObjectsDelegate {
 }
 // MARK: - ********* PhotoCaptureDelegate
 extension ScanWrapper: AVCapturePhotoCaptureDelegate {
-    
-    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        stop()
-        if #available(iOS 11.0, *) {
-            guard
-                let imgData = photo.fileDataRepresentation(),
-                let scanImg = UIImage(data: imgData)
-                else { return }
-            for idx in 0 ..< resultArr.count {
-                resultArr[idx].image = scanImg
-            }
-            completion(resultArr)
-        }
-    }
-    @available(iOS 10.0, *)
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         stop()
         guard
