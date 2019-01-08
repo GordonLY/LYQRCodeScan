@@ -9,20 +9,18 @@
 import UIKit
 
 /// 扫码区域动画效果
-public enum ScanViewAnimationStyle
-{
-    case LineMove   //线条上下移动
-    case NetGrid    //网格
-    case LineStill  //线条停止在扫码区域中央
-    case None       //无动画
+public enum ScanViewAnimationStyle {
+    case lineMove   //线条上下移动
+    case netGrid    //网格
+    case lineStill  //线条停止在扫码区域中央
+    case none       //无动画
 }
 
 /// 扫码区域4个角位置类型
-public enum ScanViewPhotoframeAngleStyle
-{
-    case Inner  //内嵌，一般不显示矩形框情况下
-    case Outer  //外嵌,包围在矩形框的4个角
-    case On     //在矩形框的4个角上，覆盖
+public enum ScanViewPhotoframeAngleStyle {
+    case inner  //内嵌，一般不显示矩形框情况下
+    case outer  //外嵌,包围在矩形框的4个角
+    case on     //在矩形框的4个角上，覆盖
 }
 
 public struct ScanViewStyle {
@@ -43,7 +41,7 @@ public struct ScanViewStyle {
     /// - 矩形框(扫码区域)周围4个角
     
     /// 扫码区域的4个角类型
-    public var photoframeAngleStyle = ScanViewPhotoframeAngleStyle.Outer
+    public var photoframeAngleStyle = ScanViewPhotoframeAngleStyle.outer
     /// 4个角的颜色
     public var colorAngle = UIColor(red: 0.0, green: 167.0/255.0, blue: 231.0/255.0, alpha: 1.0)
     /// 扫码区域4个角的宽度和高度
@@ -55,7 +53,7 @@ public struct ScanViewStyle {
     /// - 动画效果
     
     /// 扫码动画效果:线条或网格
-    public var anmiationStyle = ScanViewAnimationStyle.LineMove
+    public var anmiationStyle = ScanViewAnimationStyle.lineMove
     /// 动画效果的图像，如线条或网格的图像
     public var animationImage:UIImage?
     
@@ -68,3 +66,4 @@ public struct ScanViewStyle {
         
     }
 }
+

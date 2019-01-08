@@ -39,25 +39,18 @@ open class ScanView: UIView {
      
      - returns: instancetype
      */
-    public init(frame:CGRect, vstyle:ScanViewStyle )
-    {
+    public init(frame:CGRect, vstyle:ScanViewStyle ) {
         viewStyle = vstyle
         
-        switch (viewStyle.anmiationStyle)
-        {
-        case ScanViewAnimationStyle.LineMove:
+        switch (viewStyle.anmiationStyle) {
+        case .lineMove:
             scanLineAnimation = ScanLineAnimator()
-            break
-        case ScanViewAnimationStyle.NetGrid:
+        case .netGrid:
             scanNetAnimation = ScanNetAnimator()
-            break
-        case ScanViewAnimationStyle.LineStill:
+        case .lineStill:
             scanLineStill = UIImageView()
             scanLineStill?.image = viewStyle.animationImage
-            break
-            
-            
-        default:
+        case .none:
             break
         }
         
@@ -70,62 +63,36 @@ open class ScanView: UIView {
     }
     
     override init(frame: CGRect) {
-        
         var frameTmp = frame;
         frameTmp.origin = CGPoint.zero
-        
         super.init(frame: frameTmp)
-        
         backgroundColor = UIColor.clear
     }
     
-    required public init?(coder aDecoder: NSCoder)
-    {
-        self.init()
-        
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    deinit
-    {
-        if (scanLineAnimation != nil)
-        {
-            scanLineAnimation!.stopStepAnimating()
-        }
-        if (scanNetAnimation != nil)
-        {
-            scanNetAnimation!.stopStepAnimating()
-        }
-        
-        
-        //        print("ScanView deinit")
+    deinit {
+        scanLineAnimation?.stopStepAnimating()
+        scanNetAnimation?.stopStepAnimating()
     }
     
     
     ///  开始扫描动画
-    func startScanAnimation()
-    {
-        if isAnimationing
-        {
-            return
-        }
+    func startScanAnimation() {
+        if isAnimationing { return }
         
         isAnimationing = true
         
         let cropRect:CGRect = getScanRectForAnimation()
         
-        switch viewStyle.anmiationStyle
-        {
-        case ScanViewAnimationStyle.LineMove:
-            
-            //            print(NSStringFromCGRect(cropRect))
-            
-            scanLineAnimation!.startAnimatingWithRect(animationRect: cropRect, parentView: self, image:viewStyle.animationImage )
-            break
-        case ScanViewAnimationStyle.NetGrid:
-            
-            scanNetAnimation!.startAnimatingWithRect(animationRect: cropRect, parentView: self, image:viewStyle.animationImage )
-            break
-        case ScanViewAnimationStyle.LineStill:
+        switch viewStyle.anmiationStyle {
+        case .lineMove:
+            scanLineAnimation?.startAnimating(WithRect: cropRect, parentView: self, image: viewStyle.animationImage)
+        case .netGrid:
+            scanNetAnimation!.startAnimating(WithRect: cropRect, parentView: self, image: viewStyle.animationImage)
+        case .lineStill:
             
             let stillRect = CGRect(x: cropRect.origin.x+20,
                                    y: cropRect.origin.y + cropRect.size.height/2,
@@ -135,11 +102,8 @@ open class ScanView: UIView {
             
             self.addSubview(scanLineStill!)
             self.scanLineStill?.isHidden = false
-            
+        case .none:
             break
-            
-        default: break
-            
         }
     }
     
@@ -148,23 +112,15 @@ open class ScanView: UIView {
     {
         isAnimationing = false
         
-        switch viewStyle.anmiationStyle
-        {
-        case ScanViewAnimationStyle.LineMove:
-            
+        switch viewStyle.anmiationStyle {
+        case .lineMove:
             scanLineAnimation?.stopStepAnimating()
-            break
-        case ScanViewAnimationStyle.NetGrid:
-            
+        case .netGrid:
             scanNetAnimation?.stopStepAnimating()
-            break
-        case ScanViewAnimationStyle.LineStill:
+        case .lineStill:
             self.scanLineStill?.isHidden = true
-            
+        case .none:
             break
-            
-        default: break
-            
         }
     }
     
@@ -261,15 +217,12 @@ open class ScanView: UIView {
         diffAngle = linewidthAngle/2;  //框4个角 在线上加4个角效果
         diffAngle = 0;//与矩形框重合
         
-        switch viewStyle.photoframeAngleStyle
-        {
-        case ScanViewPhotoframeAngleStyle.Outer:
+        switch viewStyle.photoframeAngleStyle {
+        case .outer:
             diffAngle = linewidthAngle/3//框外面4个角，与框紧密联系在一起
-            
-        case ScanViewPhotoframeAngleStyle.On:
+        case .on:
             diffAngle = 0
-            
-        case ScanViewPhotoframeAngleStyle.Inner:
+        case .inner:
             diffAngle = -viewStyle.photoframeLineW/2
         }
         
@@ -326,11 +279,9 @@ open class ScanView: UIView {
         let XRetangleLeft = viewStyle.xScanRetangleOffset
         var sizeRetangle = CGSize(width: self.frame.size.width - XRetangleLeft*2, height: self.frame.size.width - XRetangleLeft*2)
         
-        if viewStyle.whRatio != 1
-        {
+        if viewStyle.whRatio != 1 {
             let w = sizeRetangle.width
             var h = w / viewStyle.whRatio
-            
             
             let hInt:Int = Int(h)
             h = CGFloat(hInt)
@@ -347,8 +298,7 @@ open class ScanView: UIView {
     }
     
     //根据矩形区域，获取识别区域
-    static func getScanRectWithPreView(preView:UIView, style: ScanViewStyle) -> CGRect
-    {
+    static func getScanRectWithPreView(preView:UIView, style: ScanViewStyle) -> CGRect {
         let XRetangleLeft = style.xScanRetangleOffset;
         var sizeRetangle = CGSize(width: preView.frame.size.width - XRetangleLeft*2, height: preView.frame.size.width - XRetangleLeft*2)
         
@@ -397,8 +347,7 @@ open class ScanView: UIView {
         return rectOfInterest
     }
     
-    func getRetangeSize()->CGSize
-    {
+    func getRetangeSize()->CGSize {
         let XRetangleLeft = viewStyle.xScanRetangleOffset
         
         var sizeRetangle = CGSize(width: self.frame.size.width - XRetangleLeft*2, height: self.frame.size.width - XRetangleLeft*2)
@@ -415,8 +364,7 @@ open class ScanView: UIView {
         return sizeRetangle
     }
     
-    func deviceStartReadying(readyStr:String)
-    {
+    func deviceStartReadying(readyStr:String) {
         let XRetangleLeft = viewStyle.xScanRetangleOffset
         
         let sizeRetangle = getRetangeSize()
@@ -450,8 +398,7 @@ open class ScanView: UIView {
         
     }
     
-    func deviceStopReadying()
-    {
+    func deviceStopReadying() {
         if activityView != nil
         {
             activityView?.stopAnimating()

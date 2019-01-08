@@ -1,6 +1,6 @@
 //
-//  LYQRCodeVC.swift
-//  LYUIkits
+//  ScanBaseViewController.swift
+//  LYQRCodeScan
 //
 //  Created by 李扬 on 2019/1/7.
 //  Copyright © 2019 rrl360. All rights reserved.
@@ -10,9 +10,11 @@ import UIKit
 import Foundation
 import AVFoundation
 
-open class ScanViewController: UIViewController {
+open class ScanBaseViewController: UIViewController {
     
-    //相机启动提示文字
+    /// scan view style
+    private var scanStyle: ScanViewStyle
+    /// 相机启动提示文字
     private var readyTips: String
     /// 识别码的类型
     private var codeTypes: [AVMetadataObject.ObjectType]
@@ -20,11 +22,13 @@ open class ScanViewController: UIViewController {
     private var isAreaIdentification: Bool
     /// 是否需要识别后的当前图像
     private var isNeedCodeImage: Bool
-    public init(readyTips: String = "loading",
+    public init(scanStyle: ScanViewStyle = ScanViewStyle.alipayStyle,
+                readyTips: String = "loading",
                 codeTypes: [AVMetadataObject.ObjectType] = [.qr],
                 areaIdentification: Bool = false,
                 needCodeImage: Bool = false
                 ) {
+        self.scanStyle = scanStyle
         self.readyTips = readyTips
         self.codeTypes = codeTypes
         self.isNeedCodeImage = needCodeImage
@@ -39,7 +43,6 @@ open class ScanViewController: UIViewController {
   
     private var scanWrapper: ScanWrapper?
     private var scanView: ScanView!
-    private var scanStyle = ScanViewStyle()
     private var isCameraPermitted = false
     
     override open func viewDidLoad() {
@@ -49,36 +52,43 @@ open class ScanViewController: UIViewController {
         Permissions.cameraPermit { [weak self](isPermitted) in
             guard let `self` = self else { return }
             self.isCameraPermitted = isPermitted
-            if isPermitted { self.p_initSubviews() }
+            if isPermitted {
+                self.p_initSubviews()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    self.startScan()
+                })
+            }
             else { self.p_showNoPermission(.camera) }
         }
-    }
-    
-    override open func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if isCameraPermitted { startScan() }
     }
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         scanView.stopScanAnimation()
         scanWrapper?.stop()
     }
+    
+    ///  重写此方法 处理扫码结果
+    open func codeScanFinished(result: ScanResult?) {
+        p_show(message: result?.content ?? "未识别二维码")
+    }
+    ///  重写此方法 处理识别相册的结果
+    open func imgRecognizeFinished(result: ScanResult?) {
+        p_show(message: result?.content ?? "未识别图像")
+    }
 }
 
 // MARK: - ********* Public method
-extension ScanViewController {
-    
-    ///  重写此方法 处理扫码结果
-    open func handleCodeScanResults(_ results: [ScanResult]) {
-        guard results.count > 0 else { return }
-        let result = results[0]
-        p_show(message: result.content)
-    }
+extension ScanBaseViewController {
+    ///  开始扫描
     public func startScan() {
         scanView.deviceStopReadying()
         scanView.startScanAnimation()
     
         scanWrapper?.start()
+    }
+    private func p_handleCodeScanResults(_ results: [ScanResult]) {
+        if results.count > 0 { codeScanFinished(result: results[0]) }
+        else { codeScanFinished(result: nil) }
     }
     ///  打开相册
     public func openPhotoAlbum() {
@@ -104,16 +114,17 @@ extension ScanViewController {
     }
 }
 // MARK: - ********* UINavigationDelegate
-extension ScanViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ScanBaseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     /// 相册选择图片识别二维码
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         picker.dismiss(animated: true, completion: nil)
         if let img = info[.editedImage] as? UIImage {
             let results = ScanWrapper.recognizeQRImage(image: img)
-            handleCodeScanResults(results)
+            if results.count > 0 {
+                imgRecognizeFinished(result: results[0])
+            } else { imgRecognizeFinished(result: nil) }
         } else {
-            handleCodeScanResults([])
+            imgRecognizeFinished(result: nil)
         }
     }
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -123,7 +134,7 @@ extension ScanViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 // MARK: - ********* Private method
-private extension ScanViewController {
+private extension ScanBaseViewController {
     func p_initSubviews() {
         
         /// scan view
@@ -144,7 +155,7 @@ private extension ScanViewController {
             { [weak self](results) in
                 guard let `self` = self else { return }
                 self.scanView.stopScanAnimation()
-                self.handleCodeScanResults(results)
+                self.p_handleCodeScanResults(results)
         })
     }
     
