@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "LYQRCodeScan"
-  s.version = "1.0.0"
+  s.version = "1.0.1"
   s.swift_version = "4.2"
   s.summary = "swift原生二维码扫描，based iOS10.0,"
   s.homepage = "https://github.com/GordonLY/LYQRCodeScan"
