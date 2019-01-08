@@ -23,6 +23,7 @@
 		B618538821E453B400AB7EFC /* ScanBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618537C21E453B400AB7EFC /* ScanBaseViewController.swift */; };
 		B618538921E453B400AB7EFC /* ScanNetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618537D21E453B400AB7EFC /* ScanNetAnimator.swift */; };
 		B618538A21E453B400AB7EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B618537E21E453B400AB7EFC /* ViewController.swift */; };
+		B6DB47E621E471480017A87E /* Bundle+LYScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DB47E521E471480017A87E /* Bundle+LYScan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B618537C21E453B400AB7EFC /* ScanBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanBaseViewController.swift; sourceTree = "<group>"; };
 		B618537D21E453B400AB7EFC /* ScanNetAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNetAnimator.swift; sourceTree = "<group>"; };
 		B618537E21E453B400AB7EFC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6DB47E521E471480017A87E /* Bundle+LYScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+LYScan.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				B618537B21E453B400AB7EFC /* ScanResult.swift */,
 				B618537C21E453B400AB7EFC /* ScanBaseViewController.swift */,
 				B618537D21E453B400AB7EFC /* ScanNetAnimator.swift */,
+				B6DB47E521E471480017A87E /* Bundle+LYScan.swift */,
 			);
 			path = "LY\U0012QRCodeScan";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				B618538921E453B400AB7EFC /* ScanNetAnimator.swift in Sources */,
 				B618538521E453B400AB7EFC /* ScanStyle.swift in Sources */,
 				B618538621E453B400AB7EFC /* ScanLineAnimator.swift in Sources */,
+				B6DB47E621E471480017A87E /* Bundle+LYScan.swift in Sources */,
 				B618538721E453B400AB7EFC /* ScanResult.swift in Sources */,
 				B618538421E453B400AB7EFC /* ScanStyleExtensions.swift in Sources */,
 				B618538821E453B400AB7EFC /* ScanBaseViewController.swift in Sources */,

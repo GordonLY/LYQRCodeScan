@@ -28,13 +28,13 @@ public extension ScanViewStyle {
         style.isNeedShowRetangle = false
         
         style.anmiationStyle = .netGrid
-        style.animationImage = UIImage(named: "qrcode_scan_full_net")
+        style.animationImage = Bundle.getImage(byName: "qrcode_scan_full_net")
         return style
     }
     
     static var qqStyle: ScanViewStyle {
         var style = ScanViewStyle()
-        style.animationImage = UIImage(named: "qrcode_scan_light_green")
+        style.animationImage = Bundle.getImage(byName: "qrcode_scan_light_green")
         return style
     }
 }
