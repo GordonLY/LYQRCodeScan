@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LYQRCodeScanDemo.xcodeproj">
+      location = "self:LYQRCodeScan.xcodeproj">
    </FileRef>
 </Workspace>

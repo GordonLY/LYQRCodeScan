@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B618535C21E4537B00AB7EFC"
+               BlueprintIdentifier = "B6EDF09921E494CC00AE6154"
                BuildableName = "LYQRCodeScanDemo.app"
                BlueprintName = "LYQRCodeScanDemo"
-               ReferencedContainer = "container:LYQRCodeScanDemo.xcodeproj">
+               ReferencedContainer = "container:LYQRCodeScan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B618535C21E4537B00AB7EFC"
+            BlueprintIdentifier = "B6EDF09921E494CC00AE6154"
             BuildableName = "LYQRCodeScanDemo.app"
             BlueprintName = "LYQRCodeScanDemo"
-            ReferencedContainer = "container:LYQRCodeScanDemo.xcodeproj">
+            ReferencedContainer = "container:LYQRCodeScan.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B618535C21E4537B00AB7EFC"
+            BlueprintIdentifier = "B6EDF09921E494CC00AE6154"
             BuildableName = "LYQRCodeScanDemo.app"
             BlueprintName = "LYQRCodeScanDemo"
-            ReferencedContainer = "container:LYQRCodeScanDemo.xcodeproj">
+            ReferencedContainer = "container:LYQRCodeScan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B618535C21E4537B00AB7EFC"
+            BlueprintIdentifier = "B6EDF09921E494CC00AE6154"
             BuildableName = "LYQRCodeScanDemo.app"
             BlueprintName = "LYQRCodeScanDemo"
-            ReferencedContainer = "container:LYQRCodeScanDemo.xcodeproj">
+            ReferencedContainer = "container:LYQRCodeScan.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
