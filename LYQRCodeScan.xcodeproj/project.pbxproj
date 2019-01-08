@@ -24,6 +24,18 @@
 		B6EDF0D421E4972500AE6154 /* ScanNetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C921E4972500AE6154 /* ScanNetAnimator.swift */; };
 		B6EDF0D721E4974100AE6154 /* ScanDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0D521E4974100AE6154 /* ScanDemoViewController.swift */; };
 		B6EDF0D821E4974100AE6154 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0D621E4974100AE6154 /* ViewController.swift */; };
+		B6EDF0E221E49A2E00AE6154 /* LYQRCodeScan.h in Headers */ = {isa = PBXBuildFile; fileRef = B6EDF0E021E49A2E00AE6154 /* LYQRCodeScan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6EDF0E621E49A3E00AE6154 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0BF21E4972500AE6154 /* ScanView.swift */; };
+		B6EDF0E721E49A3E00AE6154 /* ScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C021E4972500AE6154 /* ScanWrapper.swift */; };
+		B6EDF0E921E49A3E00AE6154 /* Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C221E4972500AE6154 /* Permissions.swift */; };
+		B6EDF0EA21E49A3E00AE6154 /* ScanStyleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C321E4972500AE6154 /* ScanStyleExtensions.swift */; };
+		B6EDF0EB21E49A3E00AE6154 /* Bundle+LYScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C421E4972500AE6154 /* Bundle+LYScan.swift */; };
+		B6EDF0EC21E49A3E00AE6154 /* ScanStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C521E4972500AE6154 /* ScanStyle.swift */; };
+		B6EDF0ED21E49A3E00AE6154 /* ScanLineAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C621E4972500AE6154 /* ScanLineAnimator.swift */; };
+		B6EDF0EE21E49A3E00AE6154 /* ScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C721E4972500AE6154 /* ScanResult.swift */; };
+		B6EDF0EF21E49A3E00AE6154 /* ScanBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C821E4972500AE6154 /* ScanBaseViewController.swift */; };
+		B6EDF0F021E49A3E00AE6154 /* ScanNetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EDF0C921E4972500AE6154 /* ScanNetAnimator.swift */; };
+		B6EDF0F121E49A4600AE6154 /* ScanResource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6EDF0C121E4972500AE6154 /* ScanResource.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,10 +58,20 @@
 		B6EDF0C921E4972500AE6154 /* ScanNetAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNetAnimator.swift; sourceTree = "<group>"; };
 		B6EDF0D521E4974100AE6154 /* ScanDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDemoViewController.swift; sourceTree = "<group>"; };
 		B6EDF0D621E4974100AE6154 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6EDF0DE21E49A2E00AE6154 /* LYQRCodeScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYQRCodeScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6EDF0E021E49A2E00AE6154 /* LYQRCodeScan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYQRCodeScan.h; sourceTree = "<group>"; };
+		B6EDF0E121E49A2E00AE6154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B6EDF09721E494CC00AE6154 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EDF0DB21E49A2E00AE6154 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,6 +86,7 @@
 			children = (
 				B6EDF0BE21E4972500AE6154 /* Source */,
 				B6EDF0AF21E4951700AE6154 /* Demo */,
+				B6EDF0DF21E49A2E00AE6154 /* LYQRCodeScan */,
 				B6EDF09B21E494CC00AE6154 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				B6EDF09A21E494CC00AE6154 /* LYQRCodeScanDemo.app */,
+				B6EDF0DE21E49A2E00AE6154 /* LYQRCodeScan.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,7 +132,27 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		B6EDF0DF21E49A2E00AE6154 /* LYQRCodeScan */ = {
+			isa = PBXGroup;
+			children = (
+				B6EDF0E021E49A2E00AE6154 /* LYQRCodeScan.h */,
+				B6EDF0E121E49A2E00AE6154 /* Info.plist */,
+			);
+			path = LYQRCodeScan;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B6EDF0D921E49A2E00AE6154 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6EDF0E221E49A2E00AE6154 /* LYQRCodeScan.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B6EDF09921E494CC00AE6154 /* LYQRCodeScanDemo */ = {
@@ -128,6 +172,24 @@
 			productReference = B6EDF09A21E494CC00AE6154 /* LYQRCodeScanDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B6EDF0DD21E49A2E00AE6154 /* LYQRCodeScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6EDF0E521E49A2E00AE6154 /* Build configuration list for PBXNativeTarget "LYQRCodeScan" */;
+			buildPhases = (
+				B6EDF0D921E49A2E00AE6154 /* Headers */,
+				B6EDF0DA21E49A2E00AE6154 /* Sources */,
+				B6EDF0DB21E49A2E00AE6154 /* Frameworks */,
+				B6EDF0DC21E49A2E00AE6154 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYQRCodeScan;
+			productName = LYQRCodeScan;
+			productReference = B6EDF0DE21E49A2E00AE6154 /* LYQRCodeScan.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -139,6 +201,9 @@
 				ORGANIZATIONNAME = rrl360;
 				TargetAttributes = {
 					B6EDF09921E494CC00AE6154 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					B6EDF0DD21E49A2E00AE6154 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -157,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				B6EDF09921E494CC00AE6154 /* LYQRCodeScanDemo */,
+				B6EDF0DD21E49A2E00AE6154 /* LYQRCodeScan */,
 			);
 		};
 /* End PBXProject section */
@@ -170,6 +236,14 @@
 				B6EDF0BB21E4951700AE6154 /* Main.storyboard in Resources */,
 				B6EDF0CC21E4972500AE6154 /* ScanResource.xcassets in Resources */,
 				B6EDF0BA21E4951700AE6154 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EDF0DC21E49A2E00AE6154 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6EDF0F121E49A4600AE6154 /* ScanResource.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +267,23 @@
 				B6EDF0BC21E4951700AE6154 /* AppDelegate.swift in Sources */,
 				B6EDF0CB21E4972500AE6154 /* ScanWrapper.swift in Sources */,
 				B6EDF0CA21E4972500AE6154 /* ScanView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6EDF0DA21E49A2E00AE6154 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6EDF0E621E49A3E00AE6154 /* ScanView.swift in Sources */,
+				B6EDF0E721E49A3E00AE6154 /* ScanWrapper.swift in Sources */,
+				B6EDF0E921E49A3E00AE6154 /* Permissions.swift in Sources */,
+				B6EDF0EA21E49A3E00AE6154 /* ScanStyleExtensions.swift in Sources */,
+				B6EDF0EB21E49A3E00AE6154 /* Bundle+LYScan.swift in Sources */,
+				B6EDF0EC21E49A3E00AE6154 /* ScanStyle.swift in Sources */,
+				B6EDF0ED21E49A3E00AE6154 /* ScanLineAnimator.swift in Sources */,
+				B6EDF0EE21E49A3E00AE6154 /* ScanResult.swift in Sources */,
+				B6EDF0EF21E49A3E00AE6154 /* ScanBaseViewController.swift in Sources */,
+				B6EDF0F021E49A3E00AE6154 /* ScanNetAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +461,64 @@
 			};
 			name = Release;
 		};
+		B6EDF0E321E49A2E00AE6154 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HA39D4H634;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LYQRCodeScan/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B6EDF0E421E49A2E00AE6154 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HA39D4H634;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LYQRCodeScan/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,6 +536,15 @@
 			buildConfigurations = (
 				B6EDF0AD21E494CC00AE6154 /* Debug */,
 				B6EDF0AE21E494CC00AE6154 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6EDF0E521E49A2E00AE6154 /* Build configuration list for PBXNativeTarget "LYQRCodeScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6EDF0E321E49A2E00AE6154 /* Debug */,
+				B6EDF0E421E49A2E00AE6154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
