@@ -10,7 +10,7 @@ import UIKit
 class ScanBundleClass { }
 extension Bundle {
     
-    static var lyQRCodeBundle: Bundle? {
+    static var qrCodeBundle: Bundle? {
         let bundle = Bundle(for: ScanBundleClass.self)
         guard
             let url = bundle.url(forResource: "LYQRCodeScan", withExtension: "bundle"),
@@ -18,9 +18,8 @@ extension Bundle {
             else { return nil }
         return b
     }
-    
     static func getImage(byName name: String) -> UIImage? {
-        return UIImage.init(named: name, in: lyQRCodeBundle, compatibleWith: nil)
+        return UIImage.init(named: name, in: qrCodeBundle, compatibleWith: nil)
     }
 }
 
