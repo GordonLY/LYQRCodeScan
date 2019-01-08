@@ -13,7 +13,7 @@ extension Bundle {
     static var lyQRCodeBundle: Bundle? {
         let bundle = Bundle(for: ScanBundleClass.self)
         guard
-            let url = bundle.url(forResource: "ScanResource", withExtension: "bundle"),
+            let url = bundle.url(forResource: "LYQRCodeScan", withExtension: "bundle"),
             let b = Bundle(url: url)
             else { return nil }
         return b
