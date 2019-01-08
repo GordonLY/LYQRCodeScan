@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 import AVFoundation
 
 open class ScanBaseViewController: UIViewController {
