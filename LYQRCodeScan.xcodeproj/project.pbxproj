@@ -121,9 +121,9 @@
 				B6EDF0C021E4972500AE6154 /* ScanWrapper.swift */,
 				B6EDF0C121E4972500AE6154 /* ScanResource.xcassets */,
 				B6EDF0C221E4972500AE6154 /* Permissions.swift */,
-				B6EDF0C321E4972500AE6154 /* ScanStyleExtensions.swift */,
 				B6EDF0C421E4972500AE6154 /* Bundle+LYScan.swift */,
 				B6EDF0C521E4972500AE6154 /* ScanStyle.swift */,
+				B6EDF0C321E4972500AE6154 /* ScanStyleExtensions.swift */,
 				B6EDF0C621E4972500AE6154 /* ScanLineAnimator.swift */,
 				B6EDF0C721E4972500AE6154 /* ScanResult.swift */,
 				B6EDF0C821E4972500AE6154 /* ScanBaseViewController.swift */,
@@ -430,13 +430,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HA39D4H634;
+				DEVELOPMENT_TEAM = 62F62BS97S;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ExaLeap.LRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,13 +448,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HA39D4H634;
+				DEVELOPMENT_TEAM = 62F62BS97S;
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rrl360.NetDIsk.LYQRCodeScan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ExaLeap.LRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
